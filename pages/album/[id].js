@@ -22,7 +22,7 @@ export default function Album () {
     return (
         <div>
         <Card key={album?.id} poster={album?.poster}  title={album?.title} author={album?.author} genre={album?.genre} year={album?.year}/>
-        <a href={"/"}>Torna al catalogo</a>
+        <a href={"/album"}>Torna al catalogo</a>
         </div>
 
     )
