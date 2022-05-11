@@ -3,6 +3,7 @@ import { useState } from 'react'
 // import styles from '../styles/Home.module.css'
 import Card from '../components/Card'
 import data from '../data/musica.json';
+import Link from 'next/link';
 
 export default function Home() {
   const music = data.response
@@ -15,9 +16,16 @@ export default function Home() {
 
       </Head>
       <div>
-      {music && music.map((song, i) => (
-        <Card key={i} poster={song.poster}  title={song.title} author={song.author} genre={song.genre} year={song.year}/>))}
-      {/* <button onClick={() => setState(!state)}>Show</button> */}
+      {music && music.map((song) => (
+        <div>
+        <Card key={song.id} poster={song.poster}  title={song.title} author={song.author} genre={song.genre} year={song.year}/>
+        <a key={song.id} href={`/album/${song?.id}`}>Click</a>
+        </div>
+        )
+        )}
+
+     
+
       </div>
 
     </div>
