@@ -1,3 +1,6 @@
+
+
+
 const Card = ({poster,title,author,genre,year }) => {
 
 

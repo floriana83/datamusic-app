@@ -8,11 +8,12 @@ export default function Album () {
     console.log(router)
 
     const album = music.find(item =>{
-        if(music.id === id) {
-            return true
-        } else {
-            return false
-        }
+         item.id === id
+        // if(item.id === id) {
+        //     return true
+        // } else {
+        //     return false
+        // }
     })
 
     console.log(album)
