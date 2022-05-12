@@ -7,21 +7,18 @@ export default function Album () {
     const music = data.response
     const router = useRouter()
     const {id} = router.query
-    // console.log(router)
+    console.log("music", music)
 
-    const album = music.find(item =>{
-        if(item.id === id){
-            return true 
-        }else{
-            return false
-  
-        }})
+    const album = music.find(item => item.id == id)
  
-    console.log(album)
+    // console.log(album)
+    if (!album){
+        return (<div>chupa</div>)
+    }
 
     return (
         <div>
-        <Card key={album?.id} poster={album?.poster}  title={album?.title} author={album?.author} genre={album?.genre} year={album?.year}/>
+        <Card key={album.id} item={album}/>
         <a href={"/album"}>Torna al catalogo</a>
         </div>
 
